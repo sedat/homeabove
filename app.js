@@ -14,7 +14,9 @@ var indexRoutes = require("./routes/index");
 var photoRoutes = require("./routes/photos");
 var commentRoutes = require("./routes/comments");
 
-mongoose.connect("mongodb://localhost/my_app", {useMongoClient: true});   
+mongoose.connect("mongodb://admin:188963520@ds119395.mlab.com:19395/photoapp", {useMongoClient: true});   
+//mongoose.connect("mongodb://localhost/my_app", {useMongoClient: true});   
+
 mongoose.Promise = global.Promise;
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
