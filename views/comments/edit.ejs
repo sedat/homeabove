@@ -1,0 +1,13 @@
+<% include ../partials/header %>
+
+<div class="ui container main text segment">
+    <form class="ui form" action="/photos/<%= photo._id %>/comment/<%= comment._id %>?_method=PUT" method="POST">
+      <div class="field">
+        <label>Title</label>
+        <input type="text" name="comment[text]" value="<%= comment.text %>">
+      </div>
+      <button class="ui blue basic button" type="submit">Submit</button>
+</form>
+</div>
+
+<% include ../partials/footer %>

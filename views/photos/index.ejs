@@ -1,0 +1,34 @@
+<% include ../partials/header %>
+
+<div id="index" class="ui container main segment">
+    <div class="ui divided items">
+    <% photos.forEach(function(photo){ %>
+      <div class="item">
+            <div class="ui image">
+              <img src="<%= photo.image %>">
+            </div>
+            <div class="content">
+              <a class="header"><%= photo.title %></a>
+              <div class="meta">
+                <p>Published by <%= photo.publisher.username %> in,
+                <br>
+                <%= photo.date.toDateString() %></p>
+              </div>
+              <div class="description">
+                <p><%- photo.body.substring(0, 30)%>...</p>
+              </div>
+              <div class="extra">
+               <a href="/photos/<%= photo._id %>" class="ui blue basic button">Info</a>
+               <% if(currentUser && photo.publisher.id.equals(currentUser._id)) { %>
+                <form style="display: inline" action="/photos/<%= photo._id %>?_method=DELETE" method="POST">
+                <button class="ui red basic button">Delete</button>
+                </form>
+                <% } %>
+              </div>
+            </div>
+        </div>
+        <% }) %>
+    </div>
+</div>
+
+<% include ../partials/footer %>

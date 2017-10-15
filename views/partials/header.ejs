@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Gorgeous Space Photos</title>
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.min.css"></link>
+        <link rel="stylesheet" type="text/css" href="/app.css"></link>
+    </head>
+    <body>
+        <div class="ui fixed menu">
+            <div class="ui container" id="navbar">
+                <a href="/photos" class="header item iconSize"><i class="space shuttle icon"></i>Photo Site</a>
+                <a href="/photos/new" class="item">New Post</a>
+            </div>
+            <div class="right menu">
+                <% if(!currentUser) { %>
+                <div class="item">
+                    <a href="/login">Login</a>
+                </div>
+                <div class="item">
+                    <a href="/register">Register</a>
+                </div>
+                <% } else { %>
+                <div class="item">
+                    <p>Signed in as <%= currentUser.username %></p>
+                </div>
+                <div class="item">
+                    <a href="/logout">Logout</a>
+                </div>
+               <% } %>
+            </div>
+        </div>
+        
+    
