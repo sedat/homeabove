@@ -57,7 +57,7 @@ router.get("/photos/:id/edit", middleware.checkPhotoOwnership, function(req, res
     });
 })
 // UPDATE ROUTE
-router.put("/photos/:id", middleware.checkCommentOwnership, function(req, res){
+router.put("/photos/:id", middleware.checkPhotoOwnership, function(req, res){
    Photo.findByIdAndUpdate(req.params.id, req.body.photo, function(err, updatedPhoto){
        if(err) {
            console.log(err);
@@ -67,7 +67,7 @@ router.put("/photos/:id", middleware.checkCommentOwnership, function(req, res){
    }) ;
 });
 // DELETE ROUTE
-router.delete("/photos/:id", middleware.checkCommentOwnership, function(req, res){
+router.delete("/photos/:id", middleware.checkPhotoOwnership, function(req, res){
    Photo.findByIdAndRemove(req.params.id, function(err){
        if(err) {
            console.log(err);
