@@ -23,3 +23,8 @@ background: linear-gradient(to right, #004e92, #000428); /* W3C, IE 10+/ Edge, F
 .ui.image {
     width: 230px;
 }
+
+#me {
+    font-family: 'Chicle', cursive;
+    color: white;
+}
